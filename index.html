@@ -1,0 +1,211 @@
+<!DOCTYPE hrml>
+<html lang="ru">
+	<head>
+	<meta charset = "UTF-8">
+	<title> Астрологический сайт </title>
+	
+	<style>
+	#logo{
+	float:left;
+	height:100%;
+	} 
+	header{
+	background-color: #1d0b4a;
+	height:50px;
+	color: white;
+	font-family: Arial;
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	} 
+	body{
+	background: url(img/cosmos1.jpg);
+	}	
+	main {
+	background: rgba(66, 135, 245, 0.5);
+	width: 80%;
+	height:100%;
+	margin-left:10%;
+	}	
+	footer{
+	background-color: #1d0b4a;
+	height:60px;
+	color: white;
+	font-family: Arial;
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	}
+	/*Выпадающее меню*/
+	.dropdown {
+    position: relative;
+    display: inline-block;
+	}
+	.dropbtn {
+    background-color: #563b9c;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+	}
+	.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+	}
+	.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+	}
+	/*действия при наведении курсора*/
+	.dropdown:hover .dropdown-content {display: block;}
+	.dropdown-content a:hover {background-color: #ddd;}
+	.dropdown:hover .dropbtn {background-color: #442a87;}
+	/*слайдер*/
+	.slider {
+	width:800px;
+	height:500px;
+	overflow:hidden;
+	border: 10px solid #fff;
+	background-color:#cecadb;
+	border-radius: 10px;
+	}
+	.middle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	}
+	.navigation {
+	position:absolute;
+	bottom: 16px;
+	left:50%;
+	transform: translateX(-50%);
+	display:flex;
+	}
+	.bar {
+	height:8px;
+	width:30px;
+	margin:6px;
+	cursor: pointer;
+	background-color:#ddd;
+	opacity: .5;
+	border-radius: 10px;
+	transition: all .4s ease;
+	}
+	.bar:hover {
+	opacity: 0.8;
+	transform:scale(1.1);
+	}
+	input[name="r"] {
+	position:absolute;
+	visibility:hidden;
+	}
+	.slides {
+	width:400%;
+	height:100%;
+	display: flex;
+	}
+	.slide {
+	width:25%;
+	transition:all .6s ease;
+	width: 90%;
+	height:90%;
+	} 
+	/*действия при клике на радиокнопки*/
+	#r1:checked~.slide{
+	margin-left:0;
+	}
+	#r2:checked~.slide{
+	margin-left:-25%;
+	}
+	#r3:checked~.slide{
+	margin-left:-50%;
+	}
+	#r4:checked~.slide{
+	margin-left:-67.5%;
+	}
+	</style>
+	
+	</head>
+	
+	<body>
+		<header>
+			<img id="logo" src="img/personalny_goroskop.jpg" alt="Логотип">
+			<nav id="menu"> <!--меню-->
+				<div class="dropdown">
+					<button class="dropbtn">Гороскоп</button>
+						<div class="dropdown-content">
+							<a href="#">На день</a>
+							<a href="#">На неделю</a>
+							<a href="#">На месяц</a>
+						</div>
+				</div>
+				<div class="dropdown">
+						<button class="dropbtn">Эзотерика</button>
+						<div class="dropdown-content">
+							<a href="#">Таро</a>
+							<a href="#">Дарина</a>
+						</div>
+				</div>
+				<div class="dropdown">
+						<button class="dropbtn">Каналы</button>
+						<div class="dropdown-content">
+							<a href="#">Финансовый канал</a>
+							<a href="#">Любовный канал</a>
+							<a href="#">Энергетический канал</a>
+						</div>
+				</div>
+				<div class="dropdown"> <!--Чтобы срабатывало затемненние-->
+				<button class="dropbtn">Натальная карта</button>
+				</div>
+				<div class="dropdown">
+				<button class="dropbtn">Колесо Баланса</button>
+				</div>
+				<div class="dropdown">
+				<button class="dropbtn">Кармические задачи</button>
+				</div>
+				<div class="dropdown">
+				<button class="dropbtn">Астрология</button>
+				<div class="dropdown-content">
+							<a href="#">Ведическая астрология</a>
+							<a href="#">Джойтиш астрология</a>
+						</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="slider middle">
+				<div class="slides">
+					<input type="radio" name="r" id="r1" checked>
+					<input type="radio" name="r" id="r2">
+					<input type="radio" name="r" id="r3">
+					<input type="radio" name="r" id="r4">
+					
+					<div class="slide"><img  src="img/oven.png" alt=""></div>
+					<div class="slide"><img  src="img/lion.png" alt=""></div>
+					<div class="slide"><img  src="img/scorpio.png" alt=""></div>
+					<div class="slide"><img  src="img/libra.png" alt=""></div>
+				</div>
+				<div class="navigation">
+					<label for="r1" class="bar"> </label>
+					<label for="r2" class="bar"> </label>
+					<label for="r3" class="bar"> </label>
+					<label for="r4" class="bar"> </label>
+				</div>
+			</div>
+			<br>
+				
+		</main>
+		<footer>
+		<h4>Это сделала Мариам =)</h4>
+		</footer>
+	</body>
+</html>
